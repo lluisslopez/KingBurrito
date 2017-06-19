@@ -1,0 +1,37 @@
+page-home {
+
+}
+.masters {
+	background-color: #f4f4f4;
+}
+
+.item-md {
+	position: relative;
+	padding-right: 0;
+	padding-left: 16px;
+	font-size: 1.6rem;
+	font-weight: normal;
+	text-transform: none;
+	color: #000;
+	background-color: #f4f4f4;
+	box-shadow: none;
+	transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+ion-slides {
+	height: 30% !important;
+}
+
+.swiper-pagination-bullet {
+	width: 8px;
+	height: 8px;
+	display: inline-block;
+	border-radius: 100%;
+	background: #f4f4f4 !important;
+	opacity: 0.2;
+	pointer-events: auto;
+}
+.swiper-pagination-bullet-active {
+	opacity: 1;
+	background: #ff6a00;
+}

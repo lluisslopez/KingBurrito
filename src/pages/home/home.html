@@ -1,0 +1,51 @@
+<ion-header>
+	<ion-navbar color='dark'>
+		<ion-title align="center"><img alt="logo"  height="40" src="assets/img/logo.png"></ion-title>
+	</ion-navbar>
+</ion-header>
+<ion-content class='masters'>
+
+	<ion-fab bottom right >
+		<button ion-fab color="dark"><ion-icon name="share"></ion-icon></button>
+			<ion-fab-list side="top">
+				<button ion-fab (click)="socialShare('facebook')"><ion-icon name="logo-facebook"></ion-icon></button>
+				<button ion-fab (click)="socialShare('whatsapp')"><ion-icon name="logo-whatsapp"></ion-icon></button>
+				<button ion-fab (click)="socialShare('twitter')"><ion-icon name="logo-twitter"></ion-icon></button>
+			</ion-fab-list>
+	</ion-fab>
+
+	<ion-slides *ngIf="margen == 'si' " id='slider' pager loop autoplay="3000" initialSlide="0">
+		<ion-slide *ngFor='let task of imgs | async let i = index;'>
+			<img style="max-width: 100%;height:auto;" [src]="task.url"/>
+		</ion-slide>
+	</ion-slides>
+
+	<ion-row>
+		<ion-col col-12>
+			<ion-card>
+				<img (click)="open()"  src="assets/img/KB_Cupon.png"/>
+			</ion-card>
+		</ion-col>
+	</ion-row>
+
+<!--
+	<ion-list>
+		<ion-item *ngFor='let it of items | async'>
+			<ion-avatar item-left>
+				<ion-icon name="star" item-left></ion-icon>
+			</ion-avatar>
+			<h2>{{ it.message }}</h2>
+		</ion-item>
+	</ion-list>
+-->
+
+	<ion-list>
+		<ion-item *ngFor='let it of itemFilter'>
+			<ion-avatar item-left>
+				<ion-icon name="star" item-left></ion-icon>
+			</ion-avatar>
+			<h2>{{ it.message }}</h2>
+		</ion-item>
+	</ion-list>
+
+</ion-content>
