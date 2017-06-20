@@ -21,7 +21,6 @@ export class Home {
 	imgs: any;
 	itemFilter=[];
 	today = new Date();
-	//public homeOptions = { };
 	constructor(
 		public navCtrl: NavController,
 		public navParams: NavParams,
@@ -30,15 +29,14 @@ export class Home {
 		public iab: InAppBrowser,
 		public socialSharing: SocialSharing,
 		public alertController: AlertController,
-		//public afAuth: AngularFireAuth,
 		public af: AngularFireDatabase,
 	) {
 		this.items = this.af.list('/messages');
 		this.imgs = this.af.list('/uploads');
 		this.imgs.forEach(item => {
-			//console.log('url:', item);
+
 			this.banners.push({title: item.name, path: item.url})
-			//console.log( this.banners);
+
 			this.margen="si";
 		});
 	}
@@ -116,14 +114,6 @@ export class Home {
 			break;
 			}
 		}
-		//}
-			/*
-			this.socialSharing.shareViaWhatsApp(message, null, url2).then(() => {
-				// Sharing via email is possible
-			}).catch(() => {
-				// Sharing via email is not possible
-			});*/
-
 	}
 
 }
